@@ -1,5 +1,3 @@
-package java.com.yuceturkomer.hw03;
-
 import com.yuceturkomer.hw03.SpecList;
 import org.junit.Assert;
 

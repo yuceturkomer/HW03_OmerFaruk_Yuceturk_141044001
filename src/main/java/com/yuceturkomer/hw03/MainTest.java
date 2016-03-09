@@ -32,16 +32,23 @@ public class MainTest {
 
         System.out.println("The integer test list1 -> " + testList1);
         System.out.println("The integer test list2 -> " + testList2);
-        System.out.println("The intersection of those 2 lists: " + testList1.getIntersectList(testList2));
-        testList2.sortList(INCREASED);
-        System.out.println("The increased format of sortList for integer test list 2 -> " + testList2);
-        testList2.sortList(DECREASED);
-        System.out.println("The decreased format of sortList for integer test list 2 -> " + testList2);
-        charTestList.sortList(INCREASED);
-        System.out.println("The increased format of sortList for char test list 2 -> " + charTestList);
-        charTestList.sortList(DECREASED);
-        System.out.println("The decreased format of sortList for char test list 2 -> " + charTestList);
-
+        try {
+            System.out.println("The intersection of those 2 lists: " + testList1.getIntersectList(testList2));
+        } catch (NullPointerException e) {
+            System.err.println("Given Collection is a null pointer." + e.getMessage());
+        }
+        try {
+            testList2.sortList(INCREASED);
+            System.out.println("The increased format of sortList for integer test list 2 -> " + testList2);
+            testList2.sortList(DECREASED);
+            System.out.println("The decreased format of sortList for integer test list 2 -> " + testList2);
+            charTestList.sortList(INCREASED);
+            System.out.println("The increased format of sortList for char test list 2 -> " + charTestList);
+            charTestList.sortList(DECREASED);
+            System.out.println("The decreased format of sortList for char test list 2 -> " + charTestList);
+        }catch (NullPointerException e){
+            System.err.println("Given Collection is a null pointer." + e.getMessage());
+        }
     }
 }
 
